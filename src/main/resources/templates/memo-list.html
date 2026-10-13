@@ -22,12 +22,7 @@
             <div class="note-card" th:each="memo : ${memos}">
                 <div class="note-card-header">
                     <h3 class="note-card-title" th:text="${memo.title}">タイトル</h3>
-					<div class="priority-badge"
-					     th:classappend="${memo.priority.name() == 'HIGH'} ? ' priority-high' : (${memo.priority.name() == 'MEDIUM'} ? ' priority-medium' : ' priority-low')"
-					     th:text="${memo.priority.label}">
-					</div>
-					
-					</div>
+                </div>
                 <div class="note-card-content">
                     <p class="note-card-text" th:text="${memo.content}">内容</p>
                 </div>
