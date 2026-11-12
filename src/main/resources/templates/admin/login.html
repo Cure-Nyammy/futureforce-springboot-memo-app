@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ログイン</title>
+</head>
+
+<body>
+
+    <h1>管理者ログイン</h1>
+
+    <form th:action="@{/admin/signin}" method="post">
+
+        <div>
+            <label>メールアドレス</label>
+            <input type="email" name="username" required>
+        </div>
+
+        <div>
+            <label>パスワード</label>
+            <input type="password" name="password" required>
+        </div>
+
+        <button type="submit">ログイン</button>
+
+    </form>
+
+    <p th:if="${param.error}">メールアドレスまたはパスワードが違います。</p>
+
+    <p th:if="${param.logout}">ログアウトしました。</p>
+
+    <a th:href="@{/admin/signup}">管理者登録はこちら</a>
+	
+	<p th:if="${param.registered}">管理者登録が完了しました。ログインしてください。</p>
+
+</body>
+</html>
